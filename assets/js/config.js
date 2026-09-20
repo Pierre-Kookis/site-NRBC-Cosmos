@@ -9,6 +9,20 @@ window.NRBC.config = {
   /* Page affichée au chargement si l'URL ne précise rien. */
   defaultView: 'accueil',
 
+  /* -----------------------------------------------------------------------
+     BANDEAU D'ENVIRONNEMENT
+     -----------------------------------------------------------------------
+     publishedHost : le domaine du site en ligne. Sur ce domaine, aucun
+     bandeau. Partout ailleurs (copie locale, dossier de test), un bandeau
+     rappelle que la page n'est pas celle que voient les membres.
+     Si tu mets un jour un nom de domaine personnalisé, change-le ici.
+
+     testFolderMarker : si le chemin du fichier contient ce mot, le bandeau
+     passe en rouge « version de test ».
+     --------------------------------------------------------------------- */
+  publishedHost:    'pierre-kookis.github.io',
+  testFolderMarker: 'site_nrbc_test',
+
   /* Sous-onglet ouvert par défaut pour chaque page qui en possède. */
   defaultSubs: {
     hierarchie: 'grades',

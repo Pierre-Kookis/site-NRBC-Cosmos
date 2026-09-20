@@ -3,6 +3,30 @@
    ========================================================================= */
 
 /* -------------------------------------------------------------------------
+   Bandeau d'environnement (copie locale / dossier de test)
+   Injecté par assets/js/main.js — invisible sur le site publié.
+   ------------------------------------------------------------------------- */
+.env-banner {
+  position: relative;
+  z-index: 120;
+  padding: 8px 18px;
+  background: rgba(227, 165, 66, .12);
+  border-bottom: 1px solid rgba(227, 165, 66, .38);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--amber);
+}
+
+.env-banner--test {
+  background: rgba(197, 73, 60, .14);
+  border-bottom-color: rgba(197, 73, 60, .45);
+  color: var(--red);
+}
+
+/* -------------------------------------------------------------------------
    Onglets secondaires
    ------------------------------------------------------------------------- */
 .subtabs {
