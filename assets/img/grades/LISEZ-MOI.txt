@@ -1,0 +1,22 @@
+DOSSIER DES INSIGNES DE GRADE
+=============================
+
+Les six images de grades sont actuellement chargées depuis imgbb
+(https://i.ibb.co/...), directement dans index.html.
+
+Pour les héberger avec le site plutôt que chez un tiers :
+
+1. Télécharge les six images et dépose-les ici en les nommant :
+     echelon-1-novice.jpg
+     echelon-2-analyste.jpg
+     echelon-3-analyste-experimente.jpg
+     echelon-4-specialiste.jpg
+     echelon-5-specialiste-avance.jpg
+     echelon-6-chef-de-laboratoire.jpg
+
+2. Dans index.html, section « 3 · HIÉRARCHIE », remplace chaque
+   src="https://i.ibb.co/..." par
+   src="assets/img/grades/echelon-X-nom.jpg"
+
+Avantage : le site ne dépend plus d'un service externe qui peut
+supprimer les images ou tomber en panne.

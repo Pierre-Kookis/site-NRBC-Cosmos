@@ -1,0 +1,20 @@
+# Systèmes
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Dépendances / build (si un jour tu en ajoutes)
+node_modules/
+dist/
+.cache/
+
+# Archives locales
+*.zip
+
+# Archive de l ancienne version Apps Script (locale uniquement)
+old/

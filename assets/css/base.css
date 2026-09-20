@@ -1,0 +1,198 @@
+/* =========================================================================
+   BASE — Variables de design, reset et typographie
+   Site NRBC · Guys Mode
+   ========================================================================= */
+
+:root {
+  /* --- Fonds et surfaces --- */
+  --bg:            #0a0e0f;
+  --bg-alt:        #0c1214;
+  --panel:         #111a1c;
+  --panel-2:       #172224;
+
+  /* --- Bordures --- */
+  --border:        #25373a;
+  --border-strong: #3f5b5f;
+  --border-soft:   #1a2729;
+
+  /* --- Texte --- */
+  --text:          #dce6e5;
+  --text-dim:      #8ba3a1;
+  --text-faint:    #54696a;
+
+  /* --- Couleurs d'accent --- */
+  --cyan:          #52d9ca;
+  --cyan-dim:      #255f58;
+  --amber:         #e3a542;
+  --yellow:        #d7c94c;
+  --orange:        #df8c40;
+  --red:           #c5493c;
+  --green:         #5fae6e;
+
+  /* --- Typographie --- */
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body:    'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  /* --- Rythme --- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --header-h:  60px;
+  --content-w: 1180px;
+}
+
+/* -------------------------------------------------------------------------
+   Reset
+   ------------------------------------------------------------------------- */
+*,
+*::before,
+*::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(82, 217, 202, .03), transparent 300px),
+    repeating-linear-gradient(0deg,
+      rgba(255, 255, 255, .012) 0px,
+      rgba(255, 255, 255, .012) 1px,
+      transparent 1px,
+      transparent 3px),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul { list-style: none; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: .92em;
+  color: var(--cyan);
+}
+
+::selection { background: var(--cyan-dim); color: #fff; }
+
+/* -------------------------------------------------------------------------
+   Accessibilité
+   ------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 200;
+  padding: 10px 16px;
+  background: var(--panel-2);
+  border: 1px solid var(--cyan);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  transition: top .15s;
+}
+.skip-link:focus { top: 12px; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[hidden] { display: none !important; }
+
+/* -------------------------------------------------------------------------
+   Texture de fond (grille / scanlines)
+   ------------------------------------------------------------------------- */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    linear-gradient(rgba(82, 217, 202, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(82, 217, 202, .035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 90%);
+          mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 90%);
+}
+
+/* -------------------------------------------------------------------------
+   Titres de page
+   ------------------------------------------------------------------------- */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+.page-title {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 44px);
+  letter-spacing: .02em;
+  color: var(--text);
+}
+.page-title--sm { font-size: clamp(22px, 3.5vw, 26px); }
+
+.page-desc {
+  max-width: 640px;
+  margin-bottom: 40px;
+  font-size: 15px;
+  color: var(--text-dim);
+}
+.page-desc--tight { margin-bottom: 24px; }
+
+.section-break { margin-top: 56px; }
+
+/* -------------------------------------------------------------------------
+   Mouvement réduit
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

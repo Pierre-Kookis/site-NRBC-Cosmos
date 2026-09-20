@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — NRBC</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0e0f">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon-180.png" type="image/png" sizes="180x180">
+  <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .lost {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 32px;
+      text-align: center;
+    }
+    .lost-code {
+      font-family: var(--font-display);
+      font-size: clamp(64px, 18vw, 130px);
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: var(--cyan);
+      line-height: 1;
+    }
+    .lost h1 {
+      margin: 10px 0 14px;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: .04em;
+    }
+    .lost p { max-width: 420px; margin: 0 auto 26px; font-size: 14px; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <main class="lost">
+    <div>
+      <p class="lost-code">404</p>
+      <h1>Secteur non répertorié</h1>
+      <p>La page demandée n'existe pas ou a été déplacée lors de la dernière refonte de la documentation NRBC.</p>
+      <a class="doc-link" href="index.html">Retour à l'accueil</a>
+    </div>
+  </main>
+</body>
+</html>

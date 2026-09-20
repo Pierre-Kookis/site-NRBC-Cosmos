@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NRBC — Division Nucléaire · Radiologique · Biologique · Chimique</title>
+  <meta name="description" content="Division NRBC : hiérarchie, procédures BSL/RSL, règlement, matériel et répertoire administratif de la spécialisation Nucléaire, Radiologique, Biologique et Chimique.">
+  <meta name="theme-color" content="#0a0e0f">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon-180.png" type="image/png" sizes="180x180">
+  <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/views.css">
+</head>
+<body>
+
+<!-- =========================================================================
+     Bibliothèque d'icônes (définies une fois, réutilisées via <use>)
+     ========================================================================= -->
+<svg class="visually-hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Nucléaire : atome (noyau + orbites électroniques) -->
+    <symbol id="icon-nucleaire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="12" cy="12" rx="9.6" ry="3.9"/>
+      <ellipse cx="12" cy="12" rx="9.6" ry="3.9" transform="rotate(60 12 12)"/>
+      <ellipse cx="12" cy="12" rx="9.6" ry="3.9" transform="rotate(120 12 12)"/>
+      <circle cx="12" cy="12" r="1.9" fill="currentColor" stroke="none"/>
+    </symbol>
+
+    <!-- Radiologique : trèfle de radioactivité -->
+    <symbol id="icon-radiologique" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <circle cx="12" cy="12" r="1.9"/>
+      <path d="M7.2 3.69 A9.6 9.6 0 0 1 16.8 3.69 L13.4 9.58 A2.8 2.8 0 0 0 10.6 9.58 Z"/>
+      <path d="M21.6 12 A9.6 9.6 0 0 1 16.8 20.31 L13.4 14.42 A2.8 2.8 0 0 0 14.8 12 Z"/>
+      <path d="M7.2 20.31 A9.6 9.6 0 0 1 2.4 12 L9.2 12 A2.8 2.8 0 0 0 10.6 14.42 Z"/>
+    </symbol>
+
+    <!-- Biologie : symbole de risque biologique -->
+    <symbol id="icon-biologie" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M17.25,7.53 L17.18,6.79 L17.00,6.04 L16.73,5.35 L16.36,4.71 L15.91,4.12 L15.38,3.61 L14.78,3.17 L14.13,2.83 L13.43,2.58 L12.71,2.42 L11.97,2.38 L11.23,2.43 L10.51,2.59 L9.81,2.85 L9.16,3.21 L8.57,3.65 L8.18,4.03 L7.84,4.42 L7.53,4.87 L7.28,5.32 L7.07,5.83 L6.91,6.35 L6.81,6.86 L6.76,7.40 L6.76,7.92 L6.82,8.46 L6.92,8.96 L7.09,9.48 L7.31,9.99 L7.57,10.43 L7.88,10.88 L8.24,11.29 L7.75,11.19 L7.27,11.14 L6.79,11.13 L6.31,11.16 L5.83,11.25 L5.36,11.37 L4.91,11.54 L4.45,11.76 L4.03,12.01 L3.62,12.32 L3.26,12.64 L2.93,12.99 L2.64,13.38 L2.38,13.79 L2.16,14.22 L1.99,14.67 L1.80,15.35 L1.71,16.02 L1.71,16.70 L1.79,17.37 L1.96,18.02 L2.23,18.68 L2.57,19.26 L2.97,19.80 L3.47,20.31 L4.03,20.74 L4.65,21.09 L5.30,21.36 L5.99,21.53 L6.69,21.62 L7.40,21.60 L8.10,21.50 L8.78,21.29 L9.42,21.00 L10.02,20.63 L10.57,20.18 L11.05,19.65 L11.45,19.07 L11.77,18.44 L12.00,17.80 L12.21,18.41 L12.50,18.99 L12.87,19.55 L13.29,20.04 L13.80,20.49 L14.32,20.86 L14.92,21.17 L15.53,21.40 L16.19,21.55 L16.83,21.62 L17.50,21.60 L18.14,21.51 L18.76,21.34 L19.38,21.08 L19.94,20.76 L20.48,20.35 L20.98,19.85 L21.43,19.26 L21.80,18.62 L22.05,17.96 L22.23,17.24 L22.30,16.54 L22.27,15.83 L22.14,15.10 L21.99,14.61 L21.80,14.13 L21.55,13.68 L21.27,13.25 L20.94,12.85 L20.58,12.48 L20.18,12.16 L19.75,11.87 L19.30,11.63 L18.82,11.43 L18.33,11.28 L17.82,11.18 L17.31,11.13 L16.79,11.13 L16.28,11.18 L15.76,11.29 L16.12,10.88 L16.42,10.46 L16.67,10.01 L16.89,9.54 L17.05,9.06 L17.17,8.55 L17.23,8.04ZM14.53,7.67 L14.47,8.16 L14.32,8.64 L14.08,9.07 L13.75,9.45 L13.37,9.75 L12.92,9.98 L12.45,10.11 L11.95,10.15 L11.46,10.10 L10.99,9.94 L10.56,9.70 L10.18,9.38 L9.87,8.99 L9.65,8.55 L9.51,8.07 L9.47,7.58 L9.53,7.09 L9.68,6.62 L9.92,6.18 L10.25,5.81 L10.63,5.50 L11.08,5.27 L11.55,5.14 L12.05,5.10 L12.54,5.16 L13.01,5.31 L13.44,5.55 L13.82,5.87 L14.13,6.26 L14.35,6.70 L14.49,7.18ZM9.48,16.44 L9.41,16.93 L9.26,17.40 L9.02,17.83 L8.69,18.20 L8.30,18.51 L7.86,18.73 L7.38,18.86 L6.89,18.90 L6.40,18.84 L5.92,18.68 L5.49,18.44 L5.12,18.12 L4.81,17.73 L4.59,17.28 L4.46,16.81 L4.42,16.31 L4.48,15.82 L4.64,15.35 L4.88,14.92 L5.21,14.54 L5.60,14.24 L6.04,14.02 L6.52,13.88 L7.01,13.85 L7.50,13.91 L7.97,14.06 L8.40,14.31 L8.78,14.63 L9.08,15.02 L9.31,15.46 L9.44,15.94ZM19.58,16.44 L19.52,16.93 L19.36,17.40 L19.12,17.83 L18.79,18.20 L18.40,18.51 L17.96,18.73 L17.48,18.86 L16.99,18.90 L16.50,18.84 L16.03,18.68 L15.60,18.44 L15.22,18.12 L14.92,17.73 L14.69,17.28 L14.56,16.81 L14.52,16.31 L14.59,15.82 L14.74,15.35 L14.98,14.92 L15.31,14.54 L15.70,14.24 L16.14,14.02 L16.62,13.88 L17.11,13.85 L17.60,13.91 L18.08,14.06 L18.51,14.31 L18.88,14.63 L19.19,15.02 L19.41,15.46 L19.54,15.94ZM14.82,13.48 L14.76,14.02 L14.60,14.55 L14.33,15.04 L13.98,15.46 L13.55,15.81 L13.06,16.07 L12.53,16.23 L11.98,16.28 L11.43,16.22 L10.91,16.06 L10.42,15.79 L9.99,15.44 L9.65,15.01 L9.39,14.52 L9.23,13.99 L9.18,13.44 L9.24,12.89 L9.40,12.36 L9.67,11.88 L10.02,11.45 L10.45,11.10 L10.94,10.85 L11.47,10.69 L12.02,10.64 L12.57,10.70 L13.09,10.86 L13.58,11.12 L14.01,11.48 L14.35,11.91 L14.61,12.40 L14.77,12.93Z"/>
+      <circle cx="12.0" cy="13.46" r="1.65"/>
+    </symbol>
+
+    <!-- Chimie : fiole d'Erlenmeyer -->
+    <symbol id="icon-chimie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M8.8 2.8h6.4"/>
+      <path d="M10 2.8v6.4l-5.2 8.9A2 2 0 0 0 6.5 21.2h11a2 2 0 0 0 1.7-3.1L14 9.2V2.8"/>
+      <path d="M7.1 15.4h9.8"/>
+      <circle cx="10.4" cy="17.9" r=".85" fill="currentColor" stroke="none"/>
+      <circle cx="13.7" cy="19.1" r=".65" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-document" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M14 3v5h5"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/>
+    </symbol>
+    <symbol id="icon-equipe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/>
+      <circle cx="18" cy="7" r="3"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<!-- =========================================================================
+     EN-TÊTE
+     ========================================================================= -->
+<header class="site-header">
+  <a class="brand" href="#accueil" data-view="accueil">
+    <img class="brand-mark" src="assets/img/logo-nrbc.png" alt="Emblème de la division NRBC" width="160" height="160">
+    <span>
+      <span class="brand-text">NRBC</span>
+      <span class="brand-sub">DIVISION SPÉCIALISÉE</span>
+    </span>
+  </a>
+
+  <nav class="site-nav" id="nav-principal" aria-label="Navigation principale">
+    <button type="button" class="navlink is-active" data-view="accueil">Accueil</button>
+    <button type="button" class="navlink" data-view="presentation">Présentation</button>
+
+    <div class="navgroup">
+      <button type="button" class="navlink" data-view="hierarchie" aria-expanded="false">
+        Hiérarchie <span class="caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="dropdown">
+        <button type="button" data-view="hierarchie" data-sub="grades">Grades</button>
+        <button type="button" data-view="hierarchie" data-sub="effectif">Effectif</button>
+      </div>
+    </div>
+
+    <div class="navgroup">
+      <button type="button" class="navlink" data-view="procedure" aria-expanded="false">
+        Procédure <span class="caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="dropdown">
+        <button type="button" data-view="procedure" data-sub="bio">Biosécurité</button>
+        <button type="button" data-view="procedure" data-sub="radio">Radiosécurité</button>
+      </div>
+    </div>
+
+    <div class="navgroup">
+      <button type="button" class="navlink" data-view="reglement" aria-expanded="false">
+        Règlement <span class="caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="dropdown">
+        <button type="button" data-view="reglement" data-sub="conduite">Conduite</button>
+        <button type="button" data-view="reglement" data-sub="securite">Sécurité</button>
+        <button type="button" data-view="reglement" data-sub="genlab">GenLab</button>
+      </div>
+    </div>
+
+    <div class="navgroup">
+      <button type="button" class="navlink" data-view="materiel" aria-expanded="false">
+        Matériel <span class="caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="dropdown">
+        <button type="button" data-view="materiel" data-sub="nucleaire">Nucléaire</button>
+        <button type="button" data-view="materiel" data-sub="radiologie">Radiologie</button>
+        <button type="button" data-view="materiel" data-sub="biologie">Biologie</button>
+        <button type="button" data-view="materiel" data-sub="chimie">Chimie</button>
+      </div>
+    </div>
+
+    <button type="button" class="navlink" data-view="repertoire">Répertoire Administratif</button>
+  </nav>
+
+  <div class="header-actions">
+    <button type="button" class="icon-btn" id="search-trigger" aria-label="Rechercher dans le site (Ctrl + F)" title="Rechercher (Ctrl + F)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <button type="button" class="icon-btn nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-principal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main class="site-main" id="contenu">
+
+  <!-- =======================================================================
+       1 · ACCUEIL
+       ======================================================================= -->
+  <section class="view" id="view-accueil" aria-labelledby="titre-accueil">
+    <div class="hero">
+      <div class="hero-emblem" aria-hidden="true">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="hero-core">
+          <div class="hero-title">NRBC</div>
+        </div>
+      </div>
+
+      <h1 id="titre-accueil" class="hero-tagline">Nucléaire · Radiologique · Biologique · Chimique</h1>
+      <p class="hero-lead">
+        Division spécialisée en gestion des risques et menaces NRBC. Surveillance, confinement et
+        intervention sur toute contamination biologique, radiologique, nucléaire ou chimique au sein
+        du complexe.
+      </p>
+
+      <ul class="domain-strip">
+        <li class="domain-chip">
+          <svg class="ic" aria-hidden="true"><use href="#icon-nucleaire"></use></svg>
+          <span class="lbl">Nucléaire</span>
+        </li>
+        <li class="domain-chip">
+          <svg class="ic" aria-hidden="true"><use href="#icon-radiologique"></use></svg>
+          <span class="lbl">Radiologique</span>
+        </li>
+        <li class="domain-chip">
+          <svg class="ic" aria-hidden="true"><use href="#icon-biologie"></use></svg>
+          <span class="lbl">Biologie</span>
+        </li>
+        <li class="domain-chip">
+          <svg class="ic" aria-hidden="true"><use href="#icon-chimie"></use></svg>
+          <span class="lbl">Chimie</span>
+        </li>
+      </ul>
+
+      <div class="home-links">
+        <button type="button" class="home-card" data-view="hierarchie">
+          <span class="num">01</span>
+          <h3>Hiérarchie</h3>
+          <p>Grades, responsabilités et progression au sein de la division NRBC.</p>
+        </button>
+        <button type="button" class="home-card" data-view="procedure">
+          <span class="num">02</span>
+          <h3>Procédures</h3>
+          <p>Niveaux d'alerte BSL et RSL, conditions d'activation et protocoles.</p>
+        </button>
+        <button type="button" class="home-card" data-view="reglement">
+          <span class="num">03</span>
+          <h3>Règlement</h3>
+          <p>Conduite, sécurité et encadrement des activités GenLab.</p>
+        </button>
+      </div>
+
+      <!-- Journal des nouveautés : ajouter une entrée en copiant un bloc .news-item -->
+      <section class="news-box" aria-labelledby="titre-nouveautes">
+        <div class="news-head">
+          <h2 id="titre-nouveautes">Journal des nouveautés</h2>
+          <span>Dernières modifications</span>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <p class="news-date"><time datetime="2026-08-18">18/08/2026</time></p>
+            <div class="news-content">
+              <strong>RSL</strong>
+              <p>Mise à jour des procédures de RSL 2 et 3.</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <p class="news-date"><time datetime="2026-08-18">18/08/2026</time></p>
+            <div class="news-content">
+              <strong>Documents</strong>
+              <p>Mise à jour des documents : modèle de rapport, PINS et liste des pathogènes.</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <p class="news-date"><time datetime="2026-08-10">10/08/2026</time></p>
+            <div class="news-content">
+              <strong>Hiérarchie</strong>
+              <p>Ajout des prérequis pour les passages d'échelons.</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <p class="news-date"><time datetime="2026-08-10">10/08/2026</time></p>
+            <div class="news-content">
+              <strong>Documents</strong>
+              <p>Refonte du document de la liste des pathogènes et du document Modèle de Rapport.</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <p class="news-date"><time datetime="2026-08-10">10/08/2026</time></p>
+            <div class="news-content">
+              <strong>Refonte NRBC</strong>
+              <p>Refonte du document NRBC complète.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       2 · PRÉSENTATION
+       ======================================================================= -->
+  <section class="view" id="view-presentation" aria-labelledby="titre-presentation" hidden>
+    <p class="eyebrow">Présentation</p>
+    <h1 class="page-title" id="titre-presentation">Qui sommes-nous ?</h1>
+    <p class="page-desc">Les quatre domaines de risque couverts par la division NRBC.</p>
+
+    <div class="domain-grid">
+      <article class="domain-card">
+        <div class="domain-card-head">
+          <svg class="ic" aria-hidden="true"><use href="#icon-nucleaire"></use></svg>
+          <h3>Nucléaire</h3>
+        </div>
+        <p class="domain-card-body">
+          Le nucléaire, dans le cadre NRBC, désigne les risques liés aux armes nucléaires, aux
+          installations nucléaires et à la dispersion de matières radioactives. Ces situations peuvent
+          provoquer de fortes irradiations, des blessures graves et une contamination durable de
+          l'environnement. Les effets sur la santé peuvent apparaître immédiatement ou sur le long
+          terme. La NRBC vise donc à prévenir ces risques et à limiter les dangers liés aux substances
+          radioactives.
+        </p>
+      </article>
+
+      <article class="domain-card">
+        <div class="domain-card-head">
+          <svg class="ic" aria-hidden="true"><use href="#icon-radiologique"></use></svg>
+          <h3>Radiologique</h3>
+        </div>
+        <p class="domain-card-body">
+          Le radiologique, dans le cadre NRBC, désigne les risques liés à la dispersion de matières
+          radioactives sans explosion nucléaire. Cette contamination peut provenir d'accidents ou de
+          rejets de substances radioactives, affectant l'air, le sol ou les personnes. Les effets
+          peuvent être invisibles au départ mais entraîner des conséquences graves sur la santé à long
+          terme. Le domaine NRBC vise ainsi à détecter ces contaminations et à protéger
+          l'environnement ainsi que les populations face aux substances radioactives.
+        </p>
+      </article>
+
+      <article class="domain-card">
+        <div class="domain-card-head">
+          <svg class="ic" aria-hidden="true"><use href="#icon-biologie"></use></svg>
+          <h3>Biologie</h3>
+        </div>
+        <p class="domain-card-body">
+          La biologie, dans le cadre NRBC, concerne les risques liés aux micro-organismes pathogènes
+          comme les bactéries, les virus ou les toxines, pouvant affecter la santé humaine, animale ou
+          végétale. Ces agents peuvent provoquer des épidémies parfois difficiles à détecter au départ
+          et se propager rapidement. Le domaine NRBC vise donc à surveiller ces menaces biologiques et
+          à protéger face aux maladies et agents pathogènes.
+        </p>
+      </article>
+
+      <article class="domain-card">
+        <div class="domain-card-head">
+          <svg class="ic" aria-hidden="true"><use href="#icon-chimie"></use></svg>
+          <h3>Chimie</h3>
+        </div>
+        <p class="domain-card-body">
+          La chimie, dans le cadre NRBC, désigne les risques liés aux substances toxiques capables de
+          blesser, tuer ou contaminer des personnes et l'environnement. Ces agents peuvent être des
+          gaz de guerre, des produits industriels dangereux ou d'autres composés chimiques nocifs. Ils
+          peuvent agir rapidement par inhalation, contact ou ingestion. Le domaine NRBC vise donc à
+          prévenir ces menaces et à protéger face aux substances chimiques dangereuses.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       3 · HIÉRARCHIE
+       ======================================================================= -->
+  <section class="view" id="view-hierarchie" aria-labelledby="titre-hierarchie" hidden>
+    <p class="eyebrow">Hiérarchie</p>
+    <h1 class="page-title" id="titre-hierarchie">Grades &amp; Progression</h1>
+    <p class="page-desc">Hiérarchie et effectif de la spécialisation NRBC.</p>
+
+    <div class="subtabs" role="tablist" aria-label="Sections de la hiérarchie">
+      <button type="button" class="subtab-btn is-active" role="tab" data-sub="grades" aria-selected="true" aria-controls="sub-grades">Grades &amp; Progression</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="effectif" aria-selected="false" aria-controls="sub-effectif">Effectif</button>
+    </div>
+
+    <!-- 3.1 Grades -->
+    <div class="subview" id="sub-grades" role="tabpanel" tabindex="0">
+      <ol class="rank-ladder">
+
+        <li class="rank-item">
+          <span class="rank-dot" aria-hidden="true"></span>
+          <article class="rank-card">
+            <div class="rank-photo">
+              <img src="https://i.ibb.co/93zykZGX/2026-08-10-02-46-43.jpg" alt="Insigne — Chef de Laboratoire" width="64" height="64" loading="lazy">
+            </div>
+            <div>
+              <p class="rank-tier">Échelon 6</p>
+              <h3>Chef de Laboratoire</h3>
+              <ul class="rank-missions">
+                <li>Assiste la hiérarchie NRBC dans ses fonctions de surveillance, de coordination et de planification.</li>
+                <li>Participe aux réunions avec la gouvernance NRBC, contribuant à la prise de décision et à l'élaboration de stratégies.</li>
+                <li>Peut être amené à représenter la hiérarchie lors de certaines occasions.</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+        <li class="rank-item">
+          <span class="rank-dot" aria-hidden="true"></span>
+          <article class="rank-card">
+            <div class="rank-photo">
+              <img src="https://i.ibb.co/S4wmn1Xw/2026-08-10-02-46-35.jpg" alt="Insigne — Spécialiste Avancé" width="64" height="64" loading="lazy">
+            </div>
+            <div>
+              <p class="rank-tier">Échelon 5</p>
+              <h3>Spécialiste Avancé</h3>
+              <ul class="rank-missions">
+                <li>Détenteur d'une expertise reconnue et d'une expérience approfondie en matière de NRBC.</li>
+                <li>Principal responsable de la formation et du mentorat des Novices de Laboratoire [NRBC-NL], assurant ainsi la pérennité des compétences au sein de l'équipe.</li>
+                <li>Apporte son expertise et son savoir-faire lors des opérations complexes et critiques.</li>
+              </ul>
+              <div class="rank-prereq">
+                <h4>Prérequis pour monter d'échelon</h4>
+                <ul>
+                  <li><span class="mandatory">Accréditation SCP-008 — OBLIGATOIRE</span></li>
+                  <li>Gérer les groupes NRBC lors de toute situation NRBC</li>
+                  <li>Participation visible (tâches, events, etc.)</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="rank-item">
+          <span class="rank-dot" aria-hidden="true"></span>
+          <article class="rank-card">
+            <div class="rank-photo">
+              <img src="https://i.ibb.co/gLCWmy1Z/2026-08-10-02-46-28.jpg" alt="Insigne — Spécialiste" width="64" height="64" loading="lazy">
+            </div>
+            <div>
+              <p class="rank-tier">Échelon 4</p>
+              <h3>Spécialiste</h3>
+              <ul class="rank-missions">
+                <li>Maîtrise l'ensemble des opérations NRBC et possède une expérience significative sur le terrain.</li>
+                <li>Capable de résoudre des problèmes complexes, d'adapter les procédures aux situations non standard et de conseiller les opérateurs de tous niveaux.</li>
+                <li>Participe à l'élaboration et à l'amélioration des procédures, ainsi qu'à la validation des équipements.</li>
+              </ul>
+              <div class="rank-prereq">
+                <h4>Prérequis pour monter d'échelon</h4>
+                <ul>
+                  <li>3 rapports minimum par semaine</li>
+                  <li>Participation visible (tâches, events, etc.)</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="rank-item">
+          <span class="rank-dot" aria-hidden="true"></span>
+          <article class="rank-card">
+            <div class="rank-photo">
+              <img src="https://i.ibb.co/q31s1Dv3/2026-08-10-02-46-19.jpg" alt="Insigne — Analyste Expérimenté" width="64" height="64" loading="lazy">
+            </div>
+            <div>
+              <p class="rank-tier">Échelon 3</p>
+              <h3>Analyste Expérimenté</h3>
+              <ul class="rank-missions">
+                <li>Supervise et contrôle le bon déroulement des opérations menées par les échelons inférieurs.</li>
+                <li>Vérifie l'application des procédures, identifie les problèmes potentiels et propose des solutions.</li>
+                <li>Continue de participer activement aux activités NRBC, assurant ainsi la transmission de son expertise et servant de modèle pour les autres opérateurs.</li>
+              </ul>
+              <p class="rank-flag">⚠ Un test est requis pour accéder à l'échelon supérieur</p>
+              <div class="rank-prereq">
+                <h4>Prérequis pour monter d'échelon</h4>
+                <ul>
+                  <li><span class="mandatory">Réussir le test — OBLIGATOIRE</span></li>
+                  <li>2 rapports minimum par semaine</li>
+                  <li>Participation visible (tâches, events, etc.)</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="rank-item">
+          <span class="rank-dot" aria-hidden="true"></span>
+          <article class="rank-card">
+            <div class="rank-photo">
+              <img src="https://i.ibb.co/hJxSwktS/2026-08-10-02-46-11.jpg" alt="Insigne — Analyste" width="64" height="64" loading="lazy">
+            </div>
+            <div>
+              <p class="rank-tier">Échelon 2</p>
+              <h3>Analyste</h3>
+              <ul class="rank-missions">
+                <li>Scientifique qualifié pour maintenir une activité passive au sein d'un environnement NRBC.</li>
+                <li>Assure une veille constante, effectue des mesures de routine et apporte un soutien technique de premier niveau.</li>
+                <li>Opère sous la direction d'un opérateur de niveau supérieur pour les tâches complexes.</li>
+              </ul>
+              <div class="rank-prereq">
+                <h4>Prérequis pour monter d'échelon</h4>
+                <ul>
+                  <li>2 rapports minimum par semaine</li>
+                  <li>Participation visible (tâches, events, etc.)</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="rank-item">
+          <span class="rank-dot" aria-hidden="true"></span>
+          <article class="rank-card">
+            <div class="rank-photo">
+              <img src="https://i.ibb.co/XrTYRYvQ/2026-08-10-02-46-02.jpg" alt="Insigne — Novice de Laboratoire" width="64" height="64" loading="lazy">
+            </div>
+            <div>
+              <p class="rank-tier">Échelon 1 · Entrée</p>
+              <h3>Novice de Laboratoire</h3>
+              <ul class="rank-missions">
+                <li>Personnel en phase d'apprentissage des compétences de base en opérations NRBC.</li>
+                <li>Sous supervision directe, applique les procédures standard, se familiarise avec l'équipement et l'environnement opérationnel.</li>
+                <li>Se concentre sur l'exécution des tâches simples et l'acquisition des connaissances fondamentales.</li>
+              </ul>
+              <div class="rank-prereq">
+                <h4>Prérequis pour monter d'échelon</h4>
+                <ul>
+                  <li>Participation visible (tâches, events, etc.)</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </li>
+
+      </ol>
+
+      <!-- Tableau des habilitations -->
+      <p class="eyebrow section-break">Habilitations</p>
+      <h2 class="page-title page-title--sm">Tableau des autorisations GenLab</h2>
+      <p class="page-desc page-desc--tight">Actions autorisées par grade.</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption class="visually-hidden">Actions GenLab autorisées pour chaque grade de la division NRBC</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Grade</span></th>
+              <th scope="col">Prise de sang</th>
+              <th scope="col">Création virus Niveau 1</th>
+              <th scope="col">Création virus Niveau 2</th>
+              <th scope="col">Test virus</th>
+              <th scope="col">Création de boost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Chef de Laboratoire</th>
+              <td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td>
+            </tr>
+            <tr>
+              <th scope="row">Spécialiste Avancé</th>
+              <td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td>
+            </tr>
+            <tr>
+              <th scope="row">Spécialiste</th>
+              <td class="perm-oui">OUI</td><td class="perm-oui">OUI</td><td class="perm-demande">SUR DEMANDE</td><td class="perm-oui">OUI</td><td class="perm-oui">OUI</td>
+            </tr>
+            <tr>
+              <th scope="row">Analyste Expérimenté</th>
+              <td class="perm-oui">OUI</td><td class="perm-demande">SUR DEMANDE</td><td class="perm-demande">SUR DEMANDE</td><td class="perm-demande">SUR DEMANDE</td><td class="perm-oui">OUI</td>
+            </tr>
+            <tr>
+              <th scope="row">Analyste</th>
+              <td class="perm-oui">OUI</td><td class="perm-demande">SUR DEMANDE</td><td class="perm-non">NON</td><td class="perm-demande">SUR DEMANDE</td><td class="perm-demande">SUR DEMANDE</td>
+            </tr>
+            <tr>
+              <th scope="row">Novice de Laboratoire</th>
+              <td class="perm-demande">SUR DEMANDE</td><td class="perm-non">NON</td><td class="perm-non">NON</td><td class="perm-non">NON</td><td class="perm-non">NON</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Classification virus / vaccin -->
+      <p class="eyebrow section-break">Classification</p>
+      <h2 class="page-title page-title--sm">Virus / Vaccin — Niveaux</h2>
+      <p class="page-desc page-desc--tight">Exemples de pathogènes classés par niveau de création.</p>
+
+      <div class="vial-grid">
+        <figure class="vial-img-card">
+          <img src="assets/img/virus-niveau-1.svg" alt="Virus / Vaccin Niveau 1 : rhume, cancer des yeux, maux de tête, explosifs" width="300" height="520" loading="lazy">
+        </figure>
+        <figure class="vial-img-card">
+          <img src="assets/img/virus-niveau-2.svg" alt="Virus / Vaccin Niveau 2 : COVID-19, SARS, Ebola" width="300" height="520" loading="lazy">
+        </figure>
+      </div>
+    </div>
+
+    <!-- 3.2 Effectif -->
+    <div class="subview" id="sub-effectif" role="tabpanel" tabindex="0" hidden>
+      <div class="effectif-toolbar">
+        <p class="effectif-status" id="effectif-status">Chargement du registre…</p>
+        <div class="effectif-controls">
+          <label class="visually-hidden" for="effectif-filter">Filtrer l'effectif</label>
+          <input type="search" class="effectif-filter" id="effectif-filter" placeholder="Filtrer par nom, grade, statut…" hidden>
+          <button type="button" class="icon-btn" id="effectif-refresh" title="Actualiser le registre" aria-label="Actualiser le registre">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Rempli automatiquement par assets/js/effectif.js -->
+      <div class="table-wrap" id="effectif-table-wrap" hidden>
+        <table class="data-table" id="effectif-table">
+          <caption class="visually-hidden">Effectif de la division NRBC</caption>
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="placeholder" id="effectif-placeholder" hidden>
+        <svg class="ic" aria-hidden="true"><use href="#icon-equipe"></use></svg>
+        <h3>Registre indisponible</h3>
+        <p>Vérifie que la feuille Google Sheets est bien partagée en lecture avec « tout utilisateur disposant du lien ».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       4 · PROCÉDURE
+       ======================================================================= -->
+  <section class="view" id="view-procedure" aria-labelledby="titre-procedure" hidden>
+    <p class="eyebrow">Procédure</p>
+    <h1 class="page-title" id="titre-procedure">Niveaux d'alerte</h1>
+    <p class="page-desc">Protocoles de biosécurité (BSL) et de radiosécurité (RSL) applicables sur le terrain.</p>
+
+    <div class="subtabs" role="tablist" aria-label="Types de procédure">
+      <button type="button" class="subtab-btn is-active" role="tab" data-sub="bio" aria-selected="true" aria-controls="sub-bio">Biosécurité</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="radio" aria-selected="false" aria-controls="sub-radio">Radiosécurité</button>
+    </div>
+
+    <!-- 4.1 Biosécurité -->
+    <div class="subview" id="sub-bio" role="tabpanel" tabindex="0">
+      <p class="eyebrow">Niveaux BSL — Bactériologie / Biologie</p>
+
+      <article class="level-card lvl-1">
+        <div class="level-head">
+          <p class="level-badge">BSL 1</p>
+          <h3>Niveau Faible</h3>
+          <div class="gauge" style="--seg-color: var(--green)" role="img" aria-label="Gravité 1 sur 4">
+            <i class="on"></i><i></i><i></i><i></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Niveau le plus bas, lorsqu'un pathogène infecte plus de 5 personnes — un type de virus
+              infectieux et dangereux. Peut être déployé à partir du grade de Novice de Laboratoire.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>1 à 5 personnes infectées</li>
+                <li>Pathogène inconnu détecté sur la zone</li>
+                <li>Code Vert</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Distance de sécurité : 2 m</li>
+              <li>Désinfection régulière du matériel et du personnel</li>
+              <li>Équipement EPI (obligatoire)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="level-card lvl-2">
+        <div class="level-head">
+          <p class="level-badge">BSL 2</p>
+          <h3>Niveau Modéré</h3>
+          <div class="gauge" style="--seg-color: var(--yellow)" role="img" aria-label="Gravité 2 sur 4">
+            <i class="on"></i><i class="on"></i><i></i><i></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Niveau présentant un pathogène en mutation et une vaste contamination. Le déploiement
+              du BSL 2 intervient à partir de 5 à 10 personnes infectées ou d'une contamination durant
+              plus de 15 min. Peut être déployé à partir du grade d'Analyste Expérimenté.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>5 à 10 personnes infectées</li>
+                <li>Pathogène très dangereux</li>
+                <li>Panique du personnel et aggravation de la contamination</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Distance de sécurité : 3 m</li>
+              <li>Désinfection constante du matériel et du personnel</li>
+              <li>Mise en quarantaine des zones infectées</li>
+              <li>Déploiement d'équipements NRBC avancés (clôtures, etc.)</li>
+              <li>Équipement EPI (obligatoire)</li>
+            </ul>
+            <p class="objective-tag">Objectif — Respecter les procédures à la lettre pour éviter une activation de BSL 3</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="level-card lvl-3">
+        <div class="level-head">
+          <p class="level-badge">BSL 3</p>
+          <h3>Niveau Élevé</h3>
+          <div class="gauge" style="--seg-color: var(--orange)" role="img" aria-label="Gravité 3 sur 4">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Niveau de danger absolu, à prendre grandement au sérieux. Le déploiement du BSL 3 fait
+              suite au BSL 2 en cas de non-respect des procédures, d'un taux d'infectés de 10 à
+              30 personnes ou d'une contamination durant plus de 30 à 40 min. Peut être déployé à
+              partir du grade de Spécialiste.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>10 à 30 personnes infectées</li>
+                <li>Pathogène au stade maximal</li>
+                <li>Panique du personnel et aggravation de la contamination</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Distance de sécurité : 5 m</li>
+              <li>Désinfection constante du matériel, des objets et du personnel</li>
+              <li>Quarantaine des secteurs (LCZ / HCZ, etc.)</li>
+              <li>Déploiement d'équipements NRBC avancés</li>
+              <li>Évacuation du personnel non infecté vers des zones sécurisées</li>
+              <li>Équipement EPI (obligatoire)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="level-card lvl-4">
+        <div class="level-head">
+          <p class="level-badge">BSL 4</p>
+          <h3>Niveau Maximal</h3>
+          <div class="gauge" style="--seg-color: var(--red)" role="img" aria-label="Gravité 4 sur 4">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Danger absolu ou abandon — le déploiement de ce BSL redonne la gérance de la
+              contamination à la direction SCI ou aux Officiers Supérieurs (Commandant / Colonel). Fait
+              suite à une incontrôlabilité du pathogène, à un taux impossible tel que 40 à 60 personnes,
+              ou à une contamination durant plus de 1 h 20. Peut être déployé à partir du grade de
+              Spécialiste Avancé, avec accord du Gérant NRBC et des Officiers en chef des opérations AIT.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>40 personnes ou plus infectées</li>
+                <li>Pathogène au stade maximal</li>
+                <li>Panique du personnel et aggravation de la contamination</li>
+                <li>Contamination incontrôlable</li>
+                <li>Infection totale du complexe</li>
+                <li>Déconfinement du pathogène (vers l'extérieur du site)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Exemples d'agents</p>
+            <p class="example-tag">SCP-[ACCRED-4]</p>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Distance de sécurité : 7 m</li>
+              <li>Incinération du matériel contaminé</li>
+              <li>Quarantaine totale du site (aucune intervention extérieure autorisée)</li>
+              <li>Déploiement d'équipements NRBC avancés</li>
+              <li>Évacuation du personnel non infecté vers une zone sécurisée</li>
+              <li>Évacuation du personnel non infecté hors site en cas d'urgence</li>
+              <li>Activation de la procédure de décontamination (autorisation requise par les officiers AIT)</li>
+              <li>Incinération des infectés en cas d'extrême urgence ou protocole standard d'un sujet anormal (perte absolue du complexe)</li>
+              <li>Activation RA-5 si risque de fuite du pathogène</li>
+              <li>Équipement EPI (obligatoire)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <aside class="remark-box">
+        <p class="field-label">Remarque</p>
+        <div class="field-block">
+          <p>Les niveaux BSL doivent être adaptés selon :</p>
+          <ul>
+            <li>La dangerosité du pathogène</li>
+            <li>Sa vitesse de propagation</li>
+            <li>Le contexte opérationnel</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- 4.2 Radiosécurité -->
+    <div class="subview" id="sub-radio" role="tabpanel" tabindex="0" hidden>
+      <p class="eyebrow">Niveaux RSL — Nucléaire / Radiologie</p>
+
+      <article class="level-card lvl-1">
+        <div class="level-head">
+          <p class="level-badge">RSL 1</p>
+          <h3>Niveau Faible</h3>
+          <div class="gauge" style="--seg-color: var(--green)" role="img" aria-label="Gravité 1 sur 3">
+            <i class="on"></i><i></i><i></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Le niveau le plus bas des 3 RSL, déployé lorsqu'un objet nucléaire ou une contamination
+              radiologique est présent dans une zone. Peut être déployé au grade de Novice de Laboratoire.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>Objet radioactif ou nucléaire présentant un taux de 1 Sv à 2 Sv ou 1 000 à 2 000 mSv/h</li>
+                <li>Début de contamination radiologique</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Port de l'équipement EPI version Bêta recommandé</li>
+              <li>Distance de 15 m avec l'objet ou la contamination</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="level-card lvl-2">
+        <div class="level-head">
+          <p class="level-badge">RSL 2</p>
+          <h3>Niveau Modéré</h3>
+          <div class="gauge" style="--seg-color: var(--yellow)" role="img" aria-label="Gravité 2 sur 3">
+            <i class="on"></i><i class="on"></i><i></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Niveau moyen, déployé lorsqu'un objet nucléaire à effet dangereux ou une contamination
+              radiologique à grande échelle est présent dans un secteur. Peut être déployé à partir du
+              grade d'Analyste.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>Objet radioactif ou nucléaire dangereux présentant un taux de 2 Sv à 4 Sv ou 2 000 à 4 000 mSv/h</li>
+                <li>Avancement de la contamination radiologique</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Évacuation du personnel vers une zone stérile et sécurisée</li>
+              <li>Décontamination complète des secteurs</li>
+              <li>Distance de 25 m avec l'objet ou la contamination</li>
+              <li>Distribution des équipements EPI version Bêta obligatoire pour tout le personnel</li>
+            </ul>
+            <p class="objective-tag">Objectif — Respecter les procédures à la lettre pour éviter une activation de RSL 3</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="level-card lvl-3">
+        <div class="level-head">
+          <p class="level-badge">RSL 3</p>
+          <h3>Niveau Élevé</h3>
+          <div class="gauge" style="--seg-color: var(--red)" role="img" aria-label="Gravité 3 sur 3">
+            <i class="on"></i><i class="on"></i><i class="on"></i>
+          </div>
+        </div>
+        <div class="level-body">
+          <div>
+            <p class="field-label">Définition</p>
+            <div class="field-block">
+              <p>Le niveau le plus haut, présentant une grande menace : l'exposition à la contamination
+              radiologique est trop dangereuse et incontrôlable, ou un objet nucléaire est extrêmement
+              instable. Peut être déployé à partir du grade de Spécialiste.</p>
+            </div>
+          </div>
+          <div>
+            <p class="field-label">Condition d'activation</p>
+            <div class="field-block">
+              <ul>
+                <li>Objet radioactif ou nucléaire présentant un taux de 4 Sv à 8 Sv ou 4 000 à 8 000 mSv/h</li>
+                <li>Contamination incontrôlable, contrôlant pratiquement tout le complexe</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field-block wide">
+            <p class="field-label">Procédures</p>
+            <ul>
+              <li>Distribution des équipements EPI version Bêta obligatoire pour tout le personnel</li>
+              <li>Distance de 35 m avec l'objet ou la contamination</li>
+              <li>Procédure de décontamination immédiate</li>
+              <li>Évacuation du personnel loin du site ou vers une zone encore sécurisée</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <aside class="remark-box">
+        <p class="field-label">Remarque</p>
+        <div class="field-block">
+          <p>Les niveaux RSL doivent être adaptés selon :</p>
+          <ul>
+            <li>La dangerosité de l'objet</li>
+            <li>La vitesse de propagation radiologique</li>
+            <li>La zone touchée par l'objet</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       5 · RÈGLEMENT
+       ======================================================================= -->
+  <section class="view" id="view-reglement" aria-labelledby="titre-reglement" hidden>
+    <p class="eyebrow">Règlement</p>
+    <h1 class="page-title" id="titre-reglement">Cadre réglementaire</h1>
+    <p class="page-desc">Conduite, sécurité et encadrement des activités GenLab de la division NRBC.</p>
+
+    <div class="subtabs" role="tablist" aria-label="Sections du règlement">
+      <button type="button" class="subtab-btn is-active" role="tab" data-sub="conduite" aria-selected="true" aria-controls="sub-conduite">Conduite</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="securite" aria-selected="false" aria-controls="sub-securite">Sécurité</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="genlab" aria-selected="false" aria-controls="sub-genlab">GenLab</button>
+    </div>
+
+    <!-- 5.1 Conduite -->
+    <div class="subview" id="sub-conduite" role="tabpanel" tabindex="0">
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 1</span><h3>Comportement</h3></div>
+        <p class="clause"><span class="clause-num">1.1</span><span class="clause-text">Le sérieux, la rigueur et le professionnalisme sont exigés de tout membre NRBC en toutes circonstances.</span></p>
+        <p class="clause"><span class="clause-num">1.2</span><span class="clause-text">Tout manque de respect envers l'interbranche (dénigrement, insulte, etc.) est <strong>strictement interdit</strong> : cela va à l'encontre du partenariat NRBC respectif. De lourdes sanctions seront appliquées.</span></p>
+        <p class="clause"><span class="clause-num">1.3</span><span class="clause-text">Dans n'importe quelle situation, toute menace de type pathogène, agent chimique ou objet nucléaire (même une mini menace) doit être prise au sérieux complet.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 2</span><h3>Ordre</h3></div>
+        <p class="clause"><span class="clause-num">2.1</span><span class="clause-text">Tout ordre donné par un supérieur hiérarchique (gérance, direction SCI, coordinateurs NRBC) doit être exécuté sans délai, sauf en cas de danger manifeste non justifié.</span></p>
+        <p class="clause"><span class="clause-num">2.2</span><span class="clause-text">Les unités AIT restent prioritaires en matière d'ordre de sécurité. Les Agents d'Intervention Tactique doivent vous guider et éviter les menaces le plus possible. Toute contestation de procédure d'évacuation d'un AIT ou autre fera l'objet d'une sanction disciplinaire.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 3</span><h3>Sécurité</h3></div>
+        <p class="clause"><span class="clause-num">3.1</span><span class="clause-text">Les FIM (Forces d'Intervention Mobile) et les AIT (Agents d'Intervention Tactique) restent prioritaires en matière de sécurité. Un membre NRBC peut être sollicité, mais n'a pas à gérer seul une situation sécuritaire sans leur approbation.</span></p>
+        <p class="clause"><span class="clause-num">3.2</span><span class="clause-text">Les protocoles de sécurité tels que BSL/RSL doivent être appliqués et respectés à la lettre. Tout manquement suivra une sanction disciplinaire EZ pour « Mise en danger d'autrui ».</span></p>
+        <p class="clause"><span class="clause-num">3.3</span><span class="clause-text">Tous les membres doivent suivre les protocoles de sécurité à la lettre pour toute manipulation d'agent.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 4</span><h3>Activité</h3></div>
+        <p class="clause"><span class="clause-num">4.1</span><span class="clause-text">Une inactivité NRBC supérieure à 14 jours (rapports, formation) pourra entraîner rétrogradation ou retrait temporaire de la spécialisation.</span></p>
+        <p class="clause"><span class="clause-num">4.2</span><span class="clause-text">Si vous n'effectuez pas votre quota de la semaine interne à la NRBC, vous recevrez un avertissement d'activité.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 5</span><h3>Autorisation</h3></div>
+        <p class="clause"><span class="clause-num">5.1</span><span class="clause-text">La priorité est donnée à la prévention des risques par substitution, confinement ou limitation des expositions. Aucun travail NRBC ne peut être réalisé sans autorisation préalable de la Gérance NRBC.</span></p>
+        <p class="clause"><span class="clause-num">5.2</span><span class="clause-text">Il est strictement interdit d'activer un BSL/RSL de niveau plus haut que le vôtre sans autorisation d'un membre de la Gérance NRBC ou de la Direction. Un Superviseur n'a pas le droit de vous autoriser. En l'absence des deux, faites une demande sur la radio D.</span></p>
+        <p class="clause"><span class="clause-num">5.3</span><span class="clause-text">Il est interdit d'intervenir dans le confinement d'un SCP biologique seul et sans l'autorisation minimum d'un Co-Gérant NRBC ou d'un membre de la Supervision.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 6</span><h3>Déclaration et gestion des incidents</h3></div>
+        <p class="clause"><span class="clause-num">6.1</span><span class="clause-text">Tout incident, accident, exposition ou perte de confinement doit être signalé immédiatement à la Gérance et consigné dans le registre des événements NRBC. Une enquête interne est ensuite réalisée pour identifier les causes et prévenir toute récidive.</span></p>
+        <p class="clause"><span class="clause-num">6.2</span><span class="clause-text">Tout accident ou incident, même minime, doit être signalé à la Gérance dans les plus brefs délais.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 7</span><h3>Déclaration et archives des agents</h3></div>
+        <p class="clause"><span class="clause-num">7.1</span><span class="clause-text">Il est interdit de classer ou créer des agents fictifs ou inexistants.</span></p>
+        <p class="clause"><span class="clause-num">7.2</span><span class="clause-text">Il est interdit de saisir des informations volontairement incohérentes ou erronées.</span></p>
+        <p class="clause"><span class="clause-num">7.3</span><span class="clause-text">Il est interdit de détourner le système de son usage initial.</span></p>
+        <p class="clause"><span class="clause-num">7.4</span><span class="clause-text">[Règle SCI] Si vous ne faites pas partie de la spécialisation NRBC et que vous ajoutez des agents, vous serez sanctionné.</span></p>
+        <p class="clause"><span class="clause-num">7.5</span><span class="clause-text">Tout nouvel agent doit être classé. Si un agent n'est pas classé, de lourdes sanctions tomberont.</span></p>
+      </article>
+    </div>
+
+    <!-- 5.2 Sécurité -->
+    <div class="subview" id="sub-securite" role="tabpanel" tabindex="0" hidden>
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 1</span><h3>Équipement (EPI)</h3></div>
+        <div class="epi-grid">
+          <div class="epi-card">
+            <p class="field-label">EPI Alpha — BioChimie</p>
+            <div class="field-block">
+              <p>Tout personnel intervenant en zone NRBC doit porter :</p>
+              <ul>
+                <li>Tenue adaptée (combinaison, gants, sur-chaussures, etc.)</li>
+                <li>Protection respiratoire (masque)</li>
+                <li>Produits désinfectants</li>
+              </ul>
+              <p>Contrôle et entretien obligatoires des EPI à chaque utilisation.</p>
+            </div>
+          </div>
+          <div class="epi-card">
+            <p class="field-label">EPI Bêta — NucléRadio</p>
+            <div class="field-block">
+              <p>Tout personnel intervenant en zone de danger NucléRadio doit porter :</p>
+              <ul>
+                <li>Tenue adaptée (combinaison en plaques de plomb)</li>
+                <li>Protection respiratoire LVL 5 (masque à gaz, double cagoule)</li>
+                <li>Dosimètre et équipement de radiologie</li>
+              </ul>
+              <p>Contrôle et entretien obligatoires des EPI à chaque utilisation.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 2</span><h3>Confidentialité</h3></div>
+        <p class="clause"><span class="clause-num">2.1</span><span class="clause-text">Toute fuite, diffusion non autorisée ou consultation illégitime d'un document fera l'objet de sanctions disciplinaires lourdes, pouvant aller jusqu'à l'exclusion de la Fondation.</span></p>
+        <p class="clause"><span class="clause-num">2.2</span><span class="clause-text">Aucun agent pathogène, chimique ou radioactif anormal ne doit être révélé.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 3</span><h3>Protocoles</h3></div>
+        <p class="clause"><span class="clause-num">3.1</span><span class="clause-text">En cas d'expérimentation présentant des risques moraux, physiques ou mentaux pour un sujet, le recours à l'amnésie (type C-D) est obligatoire.</span></p>
+        <p class="clause"><span class="clause-num">3.2</span><span class="clause-text">Les agents et substances biochimiques doivent être manipulés sous hotte (protection des substances biochimiques pour l'opérateur), enceinte de sécurité ou boîte à gants selon les procédures, stockés dans des locaux sécurisés, ventilés et verrouillés.</span></p>
+        <p class="clause"><span class="clause-num">3.3</span><span class="clause-text">L'accès aux zones NRBC est strictement limité aux personnes autorisées. Avant toute sortie de zone NRBC : les personnels passent par une procédure de décontamination, les surfaces, outils et équipements sont désinfectés selon les protocoles internes. Pour toute cessation d'activité NRBC (fin de projet, fermeture de labo), un rapport doit être réalisé.</span></p>
+        <p class="clause"><span class="clause-num">3.4</span><span class="clause-text">L'utilisation du bandeau de sécurité n'est requise qu'en cas d'événement anormal ou sur une zone biologique. L'utilisation du ruban pour vos expériences ou autre usage hors sujet de la NRBC est interdite — des sanctions seront appliquées si cette règle n'est pas respectée.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 4</span><h3>Grade</h3></div>
+        <p class="clause"><span class="clause-num">4.1</span><span class="clause-text">La white-list NRBC (accès à l'équipement, aux procédures et aux zones spécialisées) peut être suspendue ou retirée à tout moment par la Gérance en cas de mauvaise utilisation, négligence ou manquement à l'éthique.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 5</span><h3>Protocole d'alerte (BSL / RSL)</h3></div>
+
+        <p class="field-label">BSL</p>
+        <p class="clause clause--plain"><span class="clause-text">L'activation des BSL doit respecter le grade minimum requis selon le niveau concerné :</span></p>
+        <div class="field-block level-list">
+          <ul>
+            <li>BSL 1 : minimum Novice de Laboratoire</li>
+            <li>BSL 2 : minimum Analyste Expérimenté</li>
+            <li>BSL 3 : minimum Spécialiste</li>
+            <li>BSL 4 : minimum Spécialiste Avancé, avec en plus l'autorisation de la Gérance NRBC ou de la Direction Scientifique</li>
+          </ul>
+        </div>
+        <p class="clause clause--sep"><span class="clause-text">Toute activation de BSL doit être justifiée par une raison valable. Toute activation effectuée sans respecter les prérequis définis sera passible de sanctions. L'activation d'un BSL doit être effectuée via la commande <code>/site</code> en incluant obligatoirement le niveau du BSL et les procédures de sécurité associées dans le message. Exemple :</span></p>
+        <div class="example-block">
+          /site Alerte BSL 1 actif sur LCZ. 5 personnes infectées, veillez à suivre les procédures suivantes :<br><br>
+          (deuxième /site)<br>
+          /site Procédures : Distance de 2 m / Désinfectez-vous régulièrement et équipez-vous hazmat, etc. Merci.
+        </div>
+
+        <p class="field-label" style="margin-top: 20px;">RSL</p>
+        <p class="clause clause--plain"><span class="clause-text">L'activation des RSL doit respecter le grade minimum requis selon le niveau concerné :</span></p>
+        <div class="field-block level-list">
+          <ul>
+            <li>RSL 1 : minimum Novice de Laboratoire</li>
+            <li>RSL 2 : minimum Analyste</li>
+            <li>RSL 3 : minimum Spécialiste</li>
+          </ul>
+        </div>
+        <p class="clause clause--sep"><span class="clause-text">Pour une activation de RSL, elle doit être justifiée auprès de l'interbranche au moment des faits. Pour toute activation, il est obligatoire de faire un <code>/site</code> en précisant le niveau et les procédures à suivre. Exemple :</span></p>
+        <div class="example-block">
+          /site Alerte RSL 1 actif sur Conf Modulaires / Objet radioactif détecté, voici les procédures à suivre :<br><br>
+          (deuxième /site)<br>
+          /site Procédure RSL 1 : Portez tenue hazmat avec plaque de plomb et une distance de 15 m avec l'objet. Merci.
+        </div>
+
+        <p class="clause clause--sep"><span class="clause-text">En cas de non-respect des procédures par du personnel, il est obligatoire de collecter des preuves et de les transmettre à la Direction ou à la Gérance NRBC. Le non-respect des procédures de sécurité ou des règles d'activation entraînera des sanctions disciplinaires sévères.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 6</span><h3>Création &amp; utilisation de laboratoires</h3></div>
+        <p class="clause"><span class="clause-num">6.1</span><span class="clause-text">Toute analyse doit être effectuée soit dans un laboratoire déjà existant, soit dans un laboratoire nouvellement créé conformément au présent règlement.</span></p>
+        <p class="clause"><span class="clause-num">6.2</span><span class="clause-text">Un laboratoire est considéré comme valide uniquement s'il respecte les conditions suivantes : présence de murs complets, présence d'un toit. Le laboratoire doit être soit directement relié au sol (murs touchant le sol), soit équipé d'un sol complet.</span></p>
+        <p class="clause"><span class="clause-num">6.3</span><span class="clause-text">L'entrée du laboratoire doit obligatoirement être équipée d'un portail de décontamination NRBC (optionnel : sas de décontamination). Ce dispositif est requis pour éviter toute contamination extérieure, contrôler les entrées et sorties, et assurer la sécurité du personnel.</span></p>
+        <p class="clause"><span class="clause-num">6.4</span><span class="clause-text">Chaque laboratoire doit contenir au minimum une poubelle à déchets biologiques / médicaux (type DASRI), identifiable par sa couleur jaune. Cette poubelle est destinée aux déchets contaminés, au matériel biologique et aux résidus expérimentaux dangereux.</span></p>
+        <p class="clause"><span class="clause-num">6.5</span><span class="clause-text">Toute manipulation NRBC est strictement interdite en dehors d'un laboratoire conforme. Aucun test, analyse ou expérimentation ne doit être réalisé en zone ouverte ou dans un espace non sécurisé.</span></p>
+        <p class="clause"><span class="clause-num">6.6</span><span class="clause-text">Types de laboratoires autorisés — <strong>Laboratoire standard</strong> : structure complète, utilisé pour des recherches longues ou complexes, niveau de sécurité maximal recommandé. <strong>Laboratoire de crise (ou laboratoire miniature)</strong> : structure réduite, déployé rapidement en situation d'urgence, doit respecter toutes les règles de confinement, même en format compact.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 7</span><h3>Protocole Code Vert</h3></div>
+        <p class="clause clause--plain"><span class="clause-text">En raison de la longueur du règlement ainsi que de l'ajout d'images d'exemple, celui-ci est mis à disposition sous la forme d'un document Google Docs.</span></p>
+        <a class="doc-link" href="https://docs.google.com/document/d/1Dmb-Ejr4m7uuvQjZB483XgWlHH0q_ywaq_4rSEUW044/edit?usp=sharing" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#icon-document"></use></svg>
+          Consulter le document — Protocole Code Vert
+        </a>
+      </article>
+    </div>
+
+    <!-- 5.3 GenLab -->
+    <div class="subview" id="sub-genlab" role="tabpanel" tabindex="0" hidden>
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 1</span><h3>Autorisation</h3></div>
+        <p class="clause"><span class="clause-num">1.1</span><span class="clause-text">Toute création doit être demandée et validée par les Gérants NRBC.</span></p>
+        <p class="clause"><span class="clause-num">1.2</span><span class="clause-text">Vous n'avez pas le droit de prendre du sang sans autorisation.</span></p>
+        <p class="clause"><span class="clause-num">1.3</span><span class="clause-text">Par la suite, un rapport doit être effectué à la fin.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 2</span><h3>Risques NRBC</h3></div>
+        <p class="clause"><span class="clause-num">2.1</span><span class="clause-text">Si un Code Vert est déclenché lors d'une expérience, vous aurez de lourdes sanctions.</span></p>
+        <p class="clause"><span class="clause-num">2.2</span><span class="clause-text">Lorsque vous manipulez des objets en lien avec GenLab, vous devez avoir un équipement EPI Type Alpha obligatoire.</span></p>
+      </article>
+
+      <article class="article">
+        <div class="article-head"><span class="article-num">ART. 3</span><h3>Lieux d'intervention</h3></div>
+        <p class="clause"><span class="clause-num">3.1</span><span class="clause-text">Toute création doit se faire dans un laboratoire NRBC.</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       6 · MATÉRIEL
+       ======================================================================= -->
+  <section class="view" id="view-materiel" aria-labelledby="titre-materiel" hidden>
+    <p class="eyebrow">Matériel</p>
+    <h1 class="page-title" id="titre-materiel">Équipement &amp; Inventaire</h1>
+    <p class="page-desc">Équipement préliminaire par domaine de spécialisation.</p>
+
+    <div class="subtabs" role="tablist" aria-label="Domaines de matériel">
+      <button type="button" class="subtab-btn is-active" role="tab" data-sub="nucleaire" aria-selected="true" aria-controls="sub-nucleaire">Nucléaire</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="radiologie" aria-selected="false" aria-controls="sub-radiologie">Radiologie</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="biologie" aria-selected="false" aria-controls="sub-biologie">Biologie</button>
+      <button type="button" class="subtab-btn" role="tab" data-sub="chimie" aria-selected="false" aria-controls="sub-chimie">Chimie</button>
+    </div>
+
+    <!-- 6.1 Nucléaire -->
+    <div class="subview" id="sub-nucleaire" role="tabpanel" tabindex="0">
+      <div class="equip-domain-head">
+        <svg class="ic" aria-hidden="true"><use href="#icon-nucleaire"></use></svg>
+        <h3>Équipement préliminaire — Nucléaire</h3>
+      </div>
+      <div class="equip-grid">
+        <article class="equip-card"><h4>Cloison de plomb / paroi de protection</h4><p>Protège contre les radiations ionisantes.</p></article>
+        <article class="equip-card"><h4>Filtration radioactive</h4><p>Filtres pour retenir les particules radioactives.</p></article>
+        <article class="equip-card"><h4>Caméra de contrôle à distance</h4><p>Surveille les manipulations de substances nucléaires.</p></article>
+        <article class="equip-card"><h4>Balance anti-radiation</h4><p>Mesure la masse de matériaux radioactifs en toute sécurité.</p></article>
+        <article class="equip-card"><h4>Système de confinement / hotte radioactive</h4><p>Permet de manipuler les isotopes radioactifs sans contamination.</p></article>
+        <article class="equip-card"><h4>Vêtements de protection radiologique (combinaison, gants, masque)</h4><p>Protège le personnel des rayonnements et de la contamination.</p></article>
+      </div>
+    </div>
+
+    <!-- 6.2 Radiologie -->
+    <div class="subview" id="sub-radiologie" role="tabpanel" tabindex="0" hidden>
+      <div class="equip-domain-head">
+        <svg class="ic" aria-hidden="true"><use href="#icon-radiologique"></use></svg>
+        <h3>Équipement préliminaire — Radiologie</h3>
+      </div>
+      <div class="equip-grid">
+        <article class="equip-card"><h4>Compteur Geiger-Müller</h4><p>Détecte et mesure la radioactivité (ionisation des gaz).</p></article>
+        <article class="equip-card"><h4>Dosimètre individuel</h4><p>Mesure la dose de rayonnement reçue par une personne sur une période donnée.</p></article>
+        <article class="equip-card"><h4>Radiamètre</h4><p>Mesure l'intensité des rayonnements ionisants.</p></article>
+        <article class="equip-card"><h4>Spectromètre gamma</h4><p>Analyse le spectre gamma pour identifier les isotopes radioactifs.</p></article>
+        <article class="equip-card"><h4>Boîte à gants</h4><p>Permet de manipuler des substances radioactives en toute sécurité, à distance.</p></article>
+        <article class="equip-card"><h4>Télémanipulateur</h4><p>Bras mécanique permettant de manipuler des objets radioactifs à distance.</p></article>
+      </div>
+    </div>
+
+    <!-- 6.3 Biologie -->
+    <div class="subview" id="sub-biologie" role="tabpanel" tabindex="0" hidden>
+      <div class="equip-domain-head">
+        <svg class="ic" aria-hidden="true"><use href="#icon-biologie"></use></svg>
+        <h3>Équipement préliminaire — Biologie</h3>
+      </div>
+      <div class="equip-grid">
+        <article class="equip-card"><h4>Microscope</h4><p>Pour observer des cellules, micro-organismes et structures biologiques.</p></article>
+        <article class="equip-card"><h4>Boîte de Pétri</h4><p>Petites boîtes circulaires pour cultiver des micro-organismes.</p></article>
+        <article class="equip-card"><h4>Autoclave</h4><p>Stérilise le matériel et les cultures grâce à la vapeur sous pression.</p></article>
+        <article class="equip-card"><h4>Hotte à flux laminaire</h4><p>Fournit un environnement stérile pour manipuler les cultures cellulaires.</p></article>
+        <article class="equip-card"><h4>Pipette de laboratoire</h4><p>Permet de mesurer et transférer de petites quantités de liquide avec précision.</p></article>
+        <article class="equip-card"><h4>Incubateur de laboratoire</h4><p>Maintient les cultures à une température et un environnement contrôlés.</p></article>
+      </div>
+    </div>
+
+    <!-- 6.4 Chimie -->
+    <div class="subview" id="sub-chimie" role="tabpanel" tabindex="0" hidden>
+      <div class="equip-domain-head">
+        <svg class="ic" aria-hidden="true"><use href="#icon-chimie"></use></svg>
+        <h3>Équipement préliminaire — Chimie</h3>
+      </div>
+      <div class="equip-grid">
+        <article class="equip-card"><h4>Bécher</h4><p>Récipient cylindrique pour mélanger, chauffer ou contenir des liquides.</p></article>
+        <article class="equip-card"><h4>Erlenmeyer</h4><p>Flacon conique pour mélanger sans éclabousser.</p></article>
+        <article class="equip-card"><h4>Éprouvette graduée</h4><p>Tube pour mesurer des volumes précis de liquides.</p></article>
+        <article class="equip-card"><h4>Burette</h4><p>Tube gradué avec robinet pour titrages précis.</p></article>
+        <article class="equip-card"><h4>Balance de laboratoire</h4><p>Mesure avec précision la masse des substances.</p></article>
+        <article class="equip-card"><h4>Hotte chimique</h4><p>Aspirateur de fumées et gaz toxiques pour manipulations chimiques.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       7 · RÉPERTOIRE ADMINISTRATIF
+       ======================================================================= -->
+  <section class="view" id="view-repertoire" aria-labelledby="titre-repertoire" hidden>
+    <p class="eyebrow">Répertoire Administratif</p>
+    <h1 class="page-title" id="titre-repertoire">Documents de Gérance et de Consultation Exécutif (D.G.C.E.)</h1>
+    <div class="repertoire-intro">
+      <p class="page-desc" style="margin-bottom: 0;">
+        Accès rapide aux documents, protocoles et registres administratifs de la division NRBC.
+      </p>
+    </div>
+
+    <!-- Ajouter un document = copier une ligne <a class="doc-btn"> ci-dessous -->
+    <nav class="doc-grid" aria-label="Documents administratifs">
+      <a class="doc-btn" href="https://docs.google.com/presentation/d/1ny15gEuGhSSCUZxIIk4drA2wzIr-nJfpAG9A8olVir4/edit?slide=id.g3fbac5a7c71_4_246#slide=id.g3fbac5a7c71_4_246" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> P.I.N.S.
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1WfVNmOP6OzFUiODr8d-yNNz9MbsuuwN1cGVsUh3xUIM/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Modèle de Rapport
+      </a>
+      <a class="doc-btn" href="https://sites.google.com/view/site-scientifique-cc/accueil" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Site Officiel Scientifique
+      </a>
+      <a class="doc-btn" href="https://forms.gle/zYaT55V2L6nNjHQ79" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Déclarer un Agent
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/spreadsheets/d/18MnAm_PuySX82Gueg2ElmxkHR6oPvMaUyE_RLUNr_OU/edit?gid=66837461#gid=66837461" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Archives des Agents
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/14JYTAk9Jc5Is32Th6tnEjPqRvnfYKvXmu3-8EJivNgU/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Modèle de Déclaration d'Agent
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1Dmb-Ejr4m7uuvQjZB483XgWlHH0q_ywaq_4rSEUW044/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Protocole Code Vert
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeRBQAx3TZ1kM4Gb9p5hwQN_V8WBKtCtGQamhFPO3dJbViZaA/viewform" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Rapport de Patrouille
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1YiWAKf4K9hHgq77g4_nxOjYVWg3SDZTRtZfQpCioB84/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Liste des Pathogènes
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1fInUSwJteIQaVWqUPgBMT2JoUeTX0AEzkgNN8cVIRic/edit" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Protocole de Patrouille
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1zapvE-s9L33WkH1Xio90M0g0QMPv18C3T_VJCnIy51w/edit" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Protocole Nucléaire / Radiologique
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1G0L-o2pFDRiMujkPkQ4B1a8k0HEqsBLNsvRa9LqnXkU/edit" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Accord de Collaboration
+      </a>
+      <a class="doc-btn" href="https://docs.google.com/document/d/1hecZ0AcGybxcXqG_Z4_SlnEaK-uPJpF8l1PvjrMI9p4/edit" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#icon-document"></use></svg> Manuel NRBC
+      </a>
+    </nav>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Créé par : Shin R.</p>
+  <p>Édité par : Shin R. / Bili Amara</p>
+</footer>
+
+<!-- =========================================================================
+     MODALE DE RECHERCHE
+     ========================================================================= -->
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
+  <div class="search-panel">
+    <h2 id="search-title">Recherche dans le site</h2>
+
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <label class="visually-hidden" for="search-input">Terme à rechercher</label>
+      <input type="text" id="search-input" placeholder="Rechercher un grade, une procédure, un article…" autocomplete="off" spellcheck="false">
+    </div>
+
+    <div class="search-bar">
+      <p class="search-count" id="search-count" role="status" aria-live="polite">0 résultat</p>
+      <div class="search-actions">
+        <button type="button" id="search-prev" aria-label="Résultat précédent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <button type="button" id="search-next" aria-label="Résultat suivant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <button type="button" id="search-close" aria-label="Fermer la recherche">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="search-hint">Entrée : résultat suivant · Maj + Entrée : précédent · Échap : fermer</p>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/router.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/effectif.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
