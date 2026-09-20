@@ -210,4 +210,4 @@ d'utiliser des fichiers `.html` inclus via `<?!= include('nom') ?>`.
 
 ---
 
-Créé par Shin R. · Édité par Shin R. et Bili Amara.
+Créé par Shin R. · Modifier par Pierre Pic · Édité par Shin R. et Pierre Pic
